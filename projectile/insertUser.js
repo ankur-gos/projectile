@@ -16,6 +16,10 @@ exports.insertUser = function(email, callback){
 				callback(err, user);
 			});
 		}
+		else{
+			console.log('insertUser.js: User exists in database');
+			callback(new Error('Signup error: User exists'), null);
+		}
 	}
 	else{
 		console.log('insertUser.js: args invalid')
